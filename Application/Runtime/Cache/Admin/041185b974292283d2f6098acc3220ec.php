@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>用户登录</title>
 
-<link rel="stylesheet" type="text/css" href="/eblogbeta1/Public/Admin/css/login.css">
+<link rel="stylesheet" type="text/css" href="/eblogbeta/Public/Admin/css/login.css">
 
 </head>
 <body>
@@ -37,7 +37,7 @@
 	
 </div>
 
-<script type="text/javascript" src="/eblogbeta1/Public/Admin/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/eblogbeta/Public/Admin/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
 /*$('#login-button').click(function(event){
 	event.preventDefault();
