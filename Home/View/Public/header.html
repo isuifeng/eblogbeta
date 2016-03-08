@@ -1,0 +1,56 @@
+<div class="wrap-body zerogrid">
+<!--------------Header--------------->
+<header>
+    <div class="wrap-header">
+        
+        <div class="top">
+            <div class="socials">
+            
+                <!--if condition="is_login()">
+                <ul class="nav" style="margin-right:0">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:0;padding-right:0">:get_username()} <b class="caret"></b></a>
+                            
+                        <a href="{:U('User/logout')}">退出</a>
+                           
+                    </li>
+                </ul>
+            else/>-->
+                <ul class="nav" style="margin-right:0">
+                    <li>
+                        <a href="{:U('Admin/index/login')}">登录</a>
+                    </li>
+                        
+                </ul>
+            <!--</if>-->
+                    
+               
+            </div>
+            <div id="search">
+                <div class="button-search"></div>
+                <input type="text" value="Search..." onFocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onBlur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+            </div>
+        </div>
+        
+        <div id="logo">
+            <a href="{:U('index/index')}"><h1>eric_lu</h1></a>
+            <p>记录人生的点点滴滴！</p>
+        </div>
+        
+        <nav>
+            <div class="wrap-nav">
+                <div class="menu">
+                    <ul>
+                        <li><a href="{:U('index/index')}">主页</a></li>
+                        <li><a href="#">新随笔</a></li>
+                        <li><a href="#">音乐</a></li>
+                        <li><a href="#">收录</a></li>
+                        <li><a href="#">留言墙</a></li>
+                        <li><a href="#">下载</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </div>
+</header>
