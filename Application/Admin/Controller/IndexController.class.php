@@ -2,6 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends Controller {
+    //后台首页
     public function index(){
         $article = M('article')->select();
         $this->assign('article',$article);

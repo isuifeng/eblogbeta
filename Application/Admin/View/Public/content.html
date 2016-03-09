@@ -9,9 +9,14 @@
     	
 
     	<!-- 按钮工具栏 -->
-    	<div class="cf">
-            <button class="btn ajax-post" target-form="ids" url="#">新 增</button>
-		</div>
+    <div class="cf">
+        <div class="fl">
+            <div class="btn-group">
+                <button class="btn document_add" url="{:U('Article/add')}">新 增
+                </button>
+            </div>            
+        </div>
+    </div>
 
 	<!-- 数据表格 -->
     <div class="data-table">
@@ -55,3 +60,14 @@
         </div>
     </div>
     <!-- /内容区 -->
+<script type="text/javascript">
+    $(function(){
+        //只有一个模型时，点击新增
+        $('.document_add').click(function(){
+            var url = $(this).attr('url');
+            if(url != undefined && url != ''){
+                window.location.href = url;
+            }
+        });
+    })
+</script>
