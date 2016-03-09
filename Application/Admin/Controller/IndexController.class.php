@@ -3,6 +3,8 @@ namespace Admin\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
+        $article = M('article')->select();
+        $this->assign('article',$article);
     	$this->display();
     }
     public function login($username='',$password=''){
