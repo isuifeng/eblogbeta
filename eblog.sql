@@ -45,4 +45,4 @@ CREATE TABLE `eblog_category`(
 `description` char(200)  NOT NULL,
 `create_time` int(10) unsigned NOT NULL
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
-insert into `eblog_category` values(1,'随笔','闲来无事乱涂笔',1705071355)；
+insert into `eblog_category` values(1,'随笔','闲来无事乱涂笔',1705071355);
