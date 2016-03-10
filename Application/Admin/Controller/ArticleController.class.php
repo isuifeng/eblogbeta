@@ -22,22 +22,26 @@ class ArticleController extends Controller{
 	//编辑文章内容
 	public function edit(){
 		if(IS_POST){
-			$title = I('title');//文章标题
-			$content = I('content');//文章内容
-			$cid = I('category');//文章类型
-			$data = array();
-			$data['title'] = $title;
-			$data['content'] = $content;
-			$data['cid'] = $cid;
-			echo $title;
+			$data = $map = array();
+			$map['aid'] = I('aid');//文章标题
+			$data['title'] = I('title');//文章内容
+			$data['content'] = I('content');//文章类型
+			$data['cid'] = I('cid');//文章id
+			
+			M('article')->where($map)->save($data);//更新操作
+			$this->success('更新成功', U('Index/index'));
 		}else{			
 			$aid = I('aid');
 			$map = array();
 			$map['aid'] = $aid;
-			$article = M('article')->where($map)->select();			
-			$title = $article[0]['title'];
-			$content = $article[0]['content'];
-			$cid = $article[0]['cid'];
+			$article = M('article')->where($map)->select();
+
+			$aid = $article[0]['aid'];//文章id
+			$title = $article[0]['title'];//文章标题
+			$content = $article[0]['content'];//文章内容
+			$cid = $article[0]['cid'];//文章类型
+
+			$this->assign('aid',$aid);
 			$this->assign('title',$title);
 			$this->assign('content',$content);
 			$this->assign('cid',$cid);
