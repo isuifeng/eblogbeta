@@ -7,12 +7,12 @@
     <div id="main" class="main">
 
 		<div class="main-title cf">
-			<h2>新增文章</h2>
+			<h2>编辑文章</h2>
 		</div>
 	<!-- 标签页导航 -->
 	<div class="tab-wrap">	
 		<!-- 表单 -->
-		<form id="form" action="{:U('Article/add')}" method="post" class="form-horizontal">
+		<form id="form" action="{:U('Article/edit')}" method="post" class="form-horizontal">
 			<!-- 基础文档模型 -->
 			<div id="tab1" class="tab-pane in tab1">
 	            <div class="form-item cf">
@@ -20,7 +20,7 @@
 	                	<span class="check-tips">（文档标题）</span>
 	                </label>
 	                <div class="controls">
-	                    <input type="text" class="text input-large" name="title" value="">
+	                    <input type="text" class="text input-large" name="title" value="{$title}">
 	                </div>
 	            </div>
 	            <div class="form-item cf">
@@ -29,7 +29,7 @@
 	                </label>
 	                <div class="controls">
 	                    <label class="textarea">
-	                    <textarea name="content"></textarea>
+	                    <textarea name="content">{$content}</textarea>
 	                    <input type="hidden" name="parse" value="0">
 						</label>                    
 					</div>
@@ -39,7 +39,7 @@
 	                	<span class="check-tips">（做成下拉列表好一些）</span>
 	                </label>
 	                <div class="controls">
-	                    <input type="text" class="text input-large" name="category" value="">
+	                    <input type="text" class="text input-large" name="category" value="{$cid}">
 	                </div>
 	            </div>	                 
 	        </div>	        
