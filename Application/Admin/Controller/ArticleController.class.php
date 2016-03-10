@@ -48,4 +48,12 @@ class ArticleController extends Controller{
 			$this->display();
 		}
 	}
+	//删除文章
+	public function delete(){
+		$aid = I('aid');
+		$map = array();
+		$map['aid'] = $aid;
+		M('article')->where($map)->delete();
+		$this->success('删除成功', U('Index/index'));
+	}
 }

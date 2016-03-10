@@ -44,7 +44,10 @@
                         <td>{$vo.create_time}</td>
                         <td>{$vo.view}</td>
                         <td>{$vo.comment}</td>
-                        <td><a href="{:U('Article/edit?aid='.$vo['aid'])}">编辑</a> <a href="#">删除</a></td>   
+                        <td>
+                            <a href="{:U('Article/edit?aid='.$vo['aid'])}">编辑</a> 
+                            <a href="{:U('Article/delete?aid='.$vo['aid'])}">删除</a>
+                        </td>   
                     </tr>               
                 </volist>   
             </tbody>
