@@ -14,7 +14,7 @@ class MusicController extends Controller{
 		if(IS_POST){
 			$title = I('title');//歌曲名
 			$singer = I('singer');//歌手
-			$url = songName($title,$singer).'mp3';//url
+			$url = 'Uploads/music/'.songName($title,$singer).'.mp3';//url
 			$config = array(
 		        'maxSize'    =>    10145728,
 		        'rootPath'   =>    './Public/Uploads/music/',
@@ -34,10 +34,18 @@ class MusicController extends Controller{
 				$data['singer'] = $singer;
 				$data['url'] = $url;
 				M('music')->add($data);
-				$this->success('上传成功',U('Music/addMusic'));			    
+				$this->success('上传成功',U('Music/displayMusic'));			    
 			}
 		}else{			
 			$this->display();
 		}		
+	}
+	//删除音乐
+	public function deleteMusic(){
+		$mid = I('mid');
+		$map = array();
+		$map['mid'] = $mid;
+		M('music')->where($map)->delete();
+		$this->success('删除成功', U('Music/displayMusic'));
 	}
 }
