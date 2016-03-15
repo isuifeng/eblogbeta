@@ -20,7 +20,7 @@
 				                    <p>音乐</p>
 				                </h3>
 				                </div>
-				                                        
+				                
 				                <div class="content">                                
 				                    <table>
 				                    	<tr>
@@ -28,14 +28,16 @@
 				                    		<th>歌手</th>
 				                    		<th>歌曲</th>
 				                    	</tr>
-
-				                    	<tr>
-				                    		<td>花海</td>
-				                    		<td>周杰伦</td>
-				                    		<td>
-				                    			<audio controls="controls" src="__PUBLIC__/Uploads/music/花海 - 周杰伦.mp3"></audio>
-				                    		</td>
-				                    	</tr>
+				                    	<volist name='music' id='vo'>
+				                    		<tr>
+					                			<td>{$vo.title}</td>
+					                			<td>{$vo.singer}</td>
+					                			<td>
+					                				<audio controls="controls" src="__PUBLIC__/{$vo.url}">
+					                				</audio>
+					                			</td>
+				                			</tr>
+				                		</volist>				                    	
 				                    </table>
 				                    
 				                </div>

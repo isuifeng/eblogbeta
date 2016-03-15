@@ -13,7 +13,16 @@ CREATE TABLE `eblog_article`(
 `comment` int(10) NOT NULL
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 insert into `eblog_article`(aid,cid,title,content,view,comment) values(1,1,'天气真好','今天天气真好啊啊啊啊啊啊啊啊啊啊',10,5);
-
+#音乐表
+DROP TABLE IF EXISTS `eblog_music`;
+CREATE TABLE `eblog_music`(
+`mid` int(11) primary key NOT NULL AUTO_INCREMENT,
+`title` varchar(200) NOT NULL,
+`singer` varchar(200) NOT NULL,
+`url` varchar(200) NOT NULL,
+`create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+insert into `eblog_music`(mid,title,singer,url) values(1,'花海','周杰伦','__PUBLIC__/Uploads/music/花海 - 周杰伦.mp3');
 #用户表
 DROP TABLE IF EXISTS `eblog_admin`;
 CREATE TABLE `eblog_admin`(
