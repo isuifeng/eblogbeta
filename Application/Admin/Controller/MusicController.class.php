@@ -12,8 +12,9 @@ class MusicController extends Controller{
 	//添加音乐
 	public function addMusic(){
 		if(IS_POST){
-			$title = I('title');
-			$singer = I('singer');
+			$title = I('title');//歌曲名
+			$singer = I('singer');//歌手
+			$url = songName($title,$singer).'mp3';//url
 			$config = array(
 		        'maxSize'    =>    10145728,
 		        'rootPath'   =>    './Public/Uploads/music/',
@@ -28,26 +29,13 @@ class MusicController extends Controller{
 			if(!$info) {// 上传错误提示错误信息				
 			    $this->error($upload->getError());
 			}else{// 上传成功 获取上传文件信息
-				$this->success('上传成功',U('Music/addMusic'));
-			    //foreach($info as $file){
-			    //    echo $file['savepath'].$file['savename'];
-			    //}
+				$data = array();
+				$data['title'] = $title;
+				$data['singer'] = $singer;
+				$data['url'] = $url;
+				M('music')->add($data);
+				$this->success('上传成功',U('Music/addMusic'));			    
 			}
-
-
-
-
-
-
-			/*$title = I('title');//歌曲名
-			$content = I('singer');//歌手
-			$cid = I('url');//存储路径
-			$data = array();
-			$data['title'] = $title;
-			$data['singer'] = $singer;
-			$data['url'] = $url;
-			M('music')->add($data);
-			$this->success('添加成功',U('Music/index'));*/
 		}else{			
 			$this->display();
 		}		
