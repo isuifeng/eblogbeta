@@ -1,0 +1,28 @@
+<extend name="Index:index" />	
+<block name='content'>
+	<section id="content">
+		<div class="wrap-content">
+		    <div class="row block">
+		    	<div id="main-content" class="col-2-3">
+				    <div class="wrap-col">
+				    	<table>
+				    		<tr>
+				    			<th>歌曲名</th>
+				    			<th>歌手</th>
+				    			<th>操作</th>
+				    		</tr>
+				    		<volist name="music" id="vo">
+				            	<tr>
+				            		<td>{$vo.title}</td>
+				            		<td>{$vo.singer}</td>
+				            		<td><audio controls='controls' src='__PUBLIC__/{$vo.url}'></audio></td>
+				            	</tr>
+				        	</volist>    
+				    	</table>				        
+				    </div>
+				</div>		        
+		        <include file="Public/list"/>
+		    </div>
+		</div>
+	</section>
+</block>
