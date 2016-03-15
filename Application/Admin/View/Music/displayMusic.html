@@ -1,4 +1,6 @@
-<!-- 内容区 -->
+<extend name="Index:index" />
+<block name='content'>
+	<!-- 内容区 -->
 <div id="main-content">
     <div id="top-alert" class="fixed alert alert-error" style="display: none;">
         <button class="close fixed" style="margin-top: 4px;">&times;</button>
@@ -12,7 +14,7 @@
     <div class="cf">
         <div class="fl">
             <div class="btn-group">
-                <button class="btn document_add" url="{:U('Article/addArticle')}">新 增
+                <button class="btn document_add" url="{:U('Music/addMusic')}">新 增
                 </button>
             </div>            
         </div>
@@ -26,27 +28,25 @@
                 <tr>                    
                     <th>编号</th>
                     <th>标题</th>
-                    <th>类型</th>                    
+                    <th>歌手</th>                    
                     <th>创建时间</th>                    
-                    <th>浏览</th>
-                    <th>评论</th>    
-                    <th>操作</th>           
+                    <th>路径</th>  
+                    <th>操作</th>    
                 </tr>
             </thead>
 
             <!-- 列表 -->
             <tbody>                 
-                <volist name="article" id="vo">
+                <volist name="music" id="vo">
                     <tr>
-                        <td>{$vo.aid}</td>                    
+                        <td>{$vo.mid}</td>                    
                         <td>{$vo.title}</td>
-                        <td>{$vo.cid}</td>
+                        <td>{$vo.singer}</td>
                         <td>{$vo.create_time}</td>
-                        <td>{$vo.view}</td>
-                        <td>{$vo.comment}</td>
+                        <td>{$vo.url}</td>                        
                         <td>
-                            <a href="{:U('Article/editArticle?aid='.$vo['aid'])}">编辑</a> 
-                            <a href="{:U('Article/deleteArticle?aid='.$vo['aid'])}">删除</a>
+                            <a href="{:U('Music/editMusic?mid='.$vo['mid'])}">编辑</a> 
+                            <a href="{:U('Music/deleteMusic?mid='.$vo['mid'])}">删除</a>
                         </td>   
                     </tr>               
                 </volist>   
@@ -74,3 +74,4 @@
         });
     })
 </script>
+</block>

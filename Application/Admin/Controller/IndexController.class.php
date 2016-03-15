@@ -4,7 +4,7 @@ use Think\Controller;
 class IndexController extends Controller {
     //后台首页
     public function index(){
-        $article = M('article')->select();
+        $article = M('article')->order('create_time desc')->select();
         $this->assign('article',$article);
     	$this->display();
     }

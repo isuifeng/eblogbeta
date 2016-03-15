@@ -4,7 +4,7 @@ use Think\Controller;
 
 class ArticleController extends Controller{
 	//添加新文章
-	public function add(){
+	public function addArticle(){
 		if(IS_POST){
 			$title = I('title');//文章标题
 			$content = I('content');//文章内容
@@ -20,7 +20,7 @@ class ArticleController extends Controller{
 		}		
 	}
 	//编辑文章内容
-	public function edit(){
+	public function editArticle(){
 		if(IS_POST){
 			$data = $map = array();
 			$map['aid'] = I('aid');//文章标题
@@ -49,7 +49,7 @@ class ArticleController extends Controller{
 		}
 	}
 	//删除文章
-	public function delete(){
+	public function deleteArticle(){
 		$aid = I('aid');
 		$map = array();
 		$map['aid'] = $aid;
