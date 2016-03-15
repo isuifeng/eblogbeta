@@ -13,10 +13,10 @@
 
         <!-- 用户栏 -->
         <div class="user-bar">            
-                <span style="color:#FBFBFB">欢迎你，</span><a style="color:#FBFBFB" href="#">admin</a>
+                <span style="color:#FBFBFB">欢迎你，</span><a style="color:#FBFBFB" href="#"><?php echo session('name');?></a>
                 <a style="color:#FBFBFB" href="#">修改密码</a>
                 <a style="color:#FBFBFB" href="#">修改昵称</a>
-                <a style="color:#FBFBFB" href="#">退出</a>
+                <a style="color:#FBFBFB" href="{:U('Index/logout')}">退出</a>
         </div>
     </div>
 <!-- /头部 -->
