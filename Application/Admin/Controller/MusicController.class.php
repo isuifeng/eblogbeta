@@ -20,7 +20,7 @@ class MusicController extends Controller{
 		        'savePath'   =>    '',
 		        'saveName'   =>    array('songName',array($title,$singer)),		        
 		        'autoSub'    =>    false,
-		        'exts'       =>    array('png')
+		        'exts'       =>    array('mp3')
 		    );
 		    $upload = new \Think\Upload($config);// 实例化上传类
 		    // 上传文件 
