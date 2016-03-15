@@ -2,7 +2,7 @@
 namespace Home\Controller;
 use Think\Controller;
 class MusicController extends Controller{
-	public function index(){
+	public function displayMusic(){
 		$music = M('music')->select();
 		$this->assign('music',$music);
 		$this->display();
