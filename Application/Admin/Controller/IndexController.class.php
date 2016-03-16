@@ -29,6 +29,8 @@ class IndexController extends Controller {
     }
     //退出
     public function logout(){
-        session(null);
+        session('uid',null);
+        session('name',null);
+        $this->success('退出成功',U('Home/Index/index'));
     }
 }
