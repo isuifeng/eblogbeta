@@ -20,10 +20,9 @@
                         <div class="heading"><h2>随笔分类</h2></div>
                         <div class="content">
                             <ul>
-                                <li><a href="#">读书</a></li>
-                                <li><a href="#">思考</a></li>
-                                <li><a href="#">学习</a></li>                               
-                            </ul>
+                                <volist name='category' id='vo'>
+                                    <li><a href="{:U('Index/category?cid='.$vo['cid'])}">{$vo.cname}</a></li>
+                                </volist>                                
                         </div>
                     </div>
                     <div class="box">
