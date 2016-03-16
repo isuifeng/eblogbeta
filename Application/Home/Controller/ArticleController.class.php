@@ -11,9 +11,11 @@ class ArticleController extends Controller{
 		
 		$title = $article[0]['title'];
 		$content = $article[0]['content'];
+		$create_time = $article[0]['create_time'];
 
 		$this->assign('title',$title);
 		$this->assign('content',$content);
+		$this->assign('create_time',$create_time);
 		$this->display();
 	}
 }

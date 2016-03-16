@@ -4,8 +4,9 @@
             <article>
                 <div class="heading">
                 <h3>
-                    <a href="{:U('Article/detail?aid='.$vo['aid'])}">{$vo.title}</a>
+                    <a href="{:U('Article/detail?aid='.$vo['aid'])}">{$vo.title}</a>                    
                 </h3>
+                <span style="float:right;font-size:12px;">Post@ {$vo.create_time}</span>
                 </div>
                                         
                 <div class="content">                                
