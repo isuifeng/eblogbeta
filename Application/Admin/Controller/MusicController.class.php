@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class MusicController extends Controller{
+class MusicController extends InitController{
 	//音乐列表展示
 	public function displayMusic(){
 		$music = M('music')->order('create_time desc')->select();

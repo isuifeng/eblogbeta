@@ -6,9 +6,7 @@ function songName($title,$singer){
 
 //检测是否登录
 function is_login(){
-	$uid = session('uid');
-	$name = session('name');
-	if(!empty($uid)){
+	if( isset($_SESSION['uid']) ){
 		return true;
 	}else{
 		return false;

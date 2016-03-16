@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 
-class ArticleController extends Controller{
+class ArticleController extends InitController{
 	//添加新文章
 	public function addArticle(){
 		if(IS_POST){
