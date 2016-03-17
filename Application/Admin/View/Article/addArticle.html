@@ -38,12 +38,16 @@
 	            </div>
 	            <div class="form-item cf">
 	                <label class="item-label">分类
-	                	<span class="check-tips">（做成下拉列表好一些）</span>
+	                	<span class="check-tips"></span>
 	                </label>
 	                <div class="controls">
-	                    <input type="text" class="text input-large" name="category" value="">
+		                <select name='cid'>
+			                <volist name='category' id='vo'>
+			                	<option value="{$vo.cid}">{$vo.cname}</option>
+			                </volist>					  				  
+						</select>	                    
 	                </div>
-	            </div>	                 
+	            </div>                
 	        </div>	        
 			<div class="form-item cf">
 				<button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>

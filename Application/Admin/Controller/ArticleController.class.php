@@ -8,7 +8,7 @@ class ArticleController extends InitController{
 		if(IS_POST){
 			$title = I('title');//文章标题
 			$content = I('content');//文章内容
-			$cid = I('category');//文章类型
+			$cid = I('cid');//文章类型
 			$data = array();
 			$data['title'] = $title;
 			$data['content'] = $content;
@@ -16,6 +16,9 @@ class ArticleController extends InitController{
 			M('article')->add($data);
 			$this->success('添加成功',U('Index/index'));
 		}else{			
+			//分类列表
+			$category = M('category')->select();
+			$this->assign('category',$category);
 			$this->display();
 		}		
 	}
@@ -25,8 +28,8 @@ class ArticleController extends InitController{
 			$data = $map = array();
 			$map['aid'] = I('aid');//文章标题
 			$data['title'] = I('title');//文章内容
-			$data['content'] = I('content');//文章类型
-			$data['cid'] = I('cid');//文章id
+			$data['content'] = I('content');//文章内容
+			$data['cid'] = I('cid');//类型id
 			
 			M('article')->where($map)->save($data);//更新操作
 			$this->success('更新成功', U('Index/index'));
@@ -45,6 +48,11 @@ class ArticleController extends InitController{
 			$this->assign('title',$title);
 			$this->assign('content',$content);
 			$this->assign('cid',$cid);
+
+			//分类列表
+			$category = M('category')->select();
+			$this->assign('category',$category);
+
 			$this->display();
 		}
 	}
