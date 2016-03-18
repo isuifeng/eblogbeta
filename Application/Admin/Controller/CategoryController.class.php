@@ -48,6 +48,7 @@ class CategoryController extends InitController{
 			$this->display();
 		}		
 	}
+	//删除分类
 	public function deleteCategory(){
 		$mid = I('cid');
 		$map = array();

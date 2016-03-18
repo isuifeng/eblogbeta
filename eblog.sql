@@ -23,6 +23,14 @@ CREATE TABLE `eblog_music`(
 `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 insert into `eblog_music`(mid,title,singer,url) values(1,'花海','周杰伦','Uploads/music/花海 - 周杰伦.mp3');
+#收录表
+DROP TABLE IF EXISTS `eblog_include`;
+CREATE TABLE `eblog_include`(
+`id` int(11) primary key NOT NULL AUTO_INCREMENT,
+`description` char(200)  NOT NULL,
+`url` varchar(200) NOT NULL
+)ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+insert into `eblog_include`(id,description,url) values(1,'百度','http://www.baidu.com');
 #用户表
 DROP TABLE IF EXISTS `eblog_admin`;
 CREATE TABLE `eblog_admin`(
