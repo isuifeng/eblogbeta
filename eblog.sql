@@ -37,7 +37,6 @@ CREATE TABLE `eblog_admin`(
 `uid` int(11) primary key NOT NULL AUTO_INCREMENT,
 `name` char(100) NOT NULL,
 `password` char(50) NOT NULL,
-`create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `login_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 insert into `eblog_admin`(uid,name,password) values(1,'admin','21232f297a57a5a743894a0e4a801fc3');
