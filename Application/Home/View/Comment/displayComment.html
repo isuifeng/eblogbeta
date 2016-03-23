@@ -1,0 +1,45 @@
+<extend name="Index:index" />
+<block name='content'>
+	<section id="content">
+		    <div class="wrap-content">
+		        <div class="row block">
+		        	<div id="main-content" class="col-2-3" style="width:100%">
+					    <div class="wrap-col">			        
+					        <div>	
+					            <volist name='comment' id='vo'>	
+					                <article>		                
+					                    <p>{$vo.coname}:{$vo.content}<span style="float:right;font-size:14px;">Post@ {$vo.create_time}</span></p>
+					                </article>
+					            </volist>
+					        </div>				                                            
+					    </div>
+					</div>	        	
+		        </div>
+		    </div>
+
+    <form action="{:U('Comment/displayComment')}" method="post" class="basic-grey">
+	    <h1>欢迎给我留言
+	    <span>请填写以下内容</span>
+	    </h1>
+	    <label>
+	    <span>名字 :</span>
+	    <input id="coname" type="text" name="coname" placeholder="您的名字..." />
+	    </label>
+
+	    <label>
+	    <span>邮箱 :</span>
+	    <input id="email" type="email" name="email" placeholder="您的邮箱地址..." />
+	    </label>
+
+	    <label>
+	    <span>留言 :</span>
+	    <textarea id="content" name="content" placeholder="您想说的..."></textarea>
+	    </label>   
+	    <label>
+	    <span>&nbsp;</span>
+	    <input type="submit" class="button" value="Send" />
+	    </label>
+    </form>
+
+	</section>
+</block>
