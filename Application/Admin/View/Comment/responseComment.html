@@ -1,0 +1,51 @@
+<extend name="Index:index" />
+<block name='content'>
+	<!-- 内容区 -->
+<div id="main-content">
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+        <div class="alert-content">这是内容</div>
+    </div>
+    <div id="main" class="main">
+
+		<div class="main-title cf">
+			<h2>回复留言</h2>
+		</div>
+	<!-- 标签页导航 -->
+	<div class="tab-wrap">	
+		<!-- 表单 -->
+		<form id="form" action="{:U('Comment/responseComment')}" method="post" class="form-horizontal">
+			<!-- 基础文档模型 -->
+			<div id="tab1" class="tab-pane in tab1">	           
+	            <div class="form-item cf">
+	                <label class="item-label">留言
+	                	<span class="check-tips"></span>
+	                </label>
+	                <div class="controls">
+	                    <label class="textarea">
+	                    <textarea name="content">{$content}</textarea>
+	                    <input type="hidden" name="parse" value="0">
+						</label>                    
+					</div>
+	            </div>	          	     
+	            <input type="hidden" name="coid" value="{$coid}">
+	            <div class="form-item cf">
+	                <label class="item-label">我的回复
+	                	<span class="check-tips"></span>
+	                </label>
+	                <div class="controls">
+	                    <label class="textarea">
+	                    <textarea name="response">{$response}</textarea>
+	                    <input type="hidden" name="parse" value="0">
+						</label>                    
+					</div>
+	            </div>	          	                 
+	        </div>	        
+			<div class="form-item cf">
+				<button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+				<a class="btn btn-return" href="{:U('Admin/Comment/displayComment')}">返 回</a>				
+			</div>
+		</form>
+	</div>
+</div>
+</block>

@@ -1,0 +1,68 @@
+<extend name="Index:index" />
+<block name='content'>
+	<!-- 内容区 -->
+<div id="main-content">
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+        <div class="alert-content">这是内容</div>
+    </div>
+    
+    <div id="main" class="main">  	
+
+	<!-- 数据表格 -->
+    <div class="data-table">
+		<table>
+            <!-- 表头 -->
+            <thead>
+                <tr>                    
+                    <th>编号</th>
+                    <th>姓名</th>
+                    <th>邮箱</th>                                       
+                    <th>留言时间</th>   
+                    <th>留言</th>  
+                    <th>我的回复</th>   
+                    <th>操作</th>    
+                </tr>
+            </thead>
+
+            <!-- 列表 -->
+            <tbody>                 
+                <volist name="comment" id="vo">
+                    <tr>
+                        <td>{$vo.coid}</td>                    
+                        <td>{$vo.coname}</td>
+                        <td>{$vo.email}</td>                            
+                        <td>{$vo.create_time}</td> 
+                        <td>{$vo.content}</td> 
+                        <td>{$vo.response}</td>                
+                        <td>
+                            <a href="{:U('Comment/responseComment?coid='.$vo['coid'])}">回复</a> 
+                            <a href="{:U('Comment/deleteComment?coid='.$vo['coid'])}">删除</a>
+                        </td>   
+                    </tr>               
+                </volist>   
+            </tbody>
+        </table>
+	</div>
+
+	<!-- 分页 -->
+    <div class="page">
+        <div class="cont-ft">
+            <div class="copyright">
+                <div class="fl">eblog管理平台
+            </div>
+        </div>
+    </div>
+    <!-- /内容区 -->
+<script type="text/javascript">
+    $(function(){
+        //只有一个模型时，点击新增
+        $('.document_add').click(function(){
+            var url = $(this).attr('url');
+            if(url != undefined && url != ''){
+                window.location.href = url;
+            }
+        });
+    })
+</script>
+</block>

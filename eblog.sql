@@ -49,10 +49,11 @@ CREATE TABLE `eblog_comment`(
 `coname` char(200) NOT NULL,
 `email` char(200)  NOT NULL,
 `content` varchar(500) NOT NULL,
-`create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+`create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`response` varchar(500) NOT NULL
 )ENGINE=MyISAM  DEFAULT CHARSET=utf8;
-insert into `eblog_comment`(coid,aid,coname,email,content) values(1,1,'随风','12345@qq.com','写的真不错');
-
+insert into `eblog_comment`(coid,aid,coname,email,content,response) values(1,1,'随风','12345@qq.com','写的真不错','多谢夸奖');
+insert into `eblog_comment`(coid,aid,coname,email,content,response) values(2,2,'张三','34567@qq.com','天气不错哦','是啊是啊');
 #分类表
 DROP TABLE IF EXISTS `eblog_category`;
 CREATE TABLE `eblog_category`(
