@@ -5,7 +5,8 @@ class IndexController extends Controller {
 
     public function index(){
     	//获取文章数据
-    	$article = M('article')->order('create_time desc')->select();
+    	$article = M('article')->field("aid,title,create_time,left(content,160) as content")->order('create_time desc')->select();
+       // print_r($article);
     	$this->assign('article',$article);
 
     	$res = weather();//天气api调用
